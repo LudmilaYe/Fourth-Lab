@@ -7,15 +7,17 @@ using System.Drawing;
 
 namespace Fourth_Lab
 {
+    //Для определения типа фильма
     public enum FilmType
     {
         Художественный,
         Документальный
     }
 
+    //Абстрактный класс
     public abstract class Movie
     {
-        public static Random rnd = new Random();
+        public static Random rnd = new Random(); //Для генерации случайных чисел
         public int Rating = 0;
 
         public virtual string GetInfo()
@@ -26,6 +28,7 @@ namespace Fourth_Lab
         public abstract Bitmap GetIcon();
     }
 
+    //Дочерний класс Movie для фильмов
     public class Film : Movie
     {
         public int Length = 0;
@@ -56,6 +59,7 @@ namespace Fourth_Lab
         }
     }
 
+    //Дочерний класс Movie для сериалов
     public class Serial : Movie 
     {
         public int Episodes = 0;
@@ -83,6 +87,7 @@ namespace Fourth_Lab
         }
     }
 
+    //Дочерний класс Movie для TV передач
     public class TVShow : Movie
     {
         public int Duration = 0;

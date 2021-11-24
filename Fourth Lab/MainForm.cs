@@ -12,6 +12,7 @@ namespace Fourth_Lab
 {
     public partial class MainForm : Form
     {
+        public Random rnd = new Random();
         List<Movie> movieList = new List<Movie>();
         public MainForm()
         { 
@@ -19,10 +20,10 @@ namespace Fourth_Lab
             ShowInfo();
         }
 
+        //Перезаполнение списка
         private void btnRefill_Click(object sender, EventArgs e)
         {
             this.movieList.Clear();
-            var rnd = new Random();
             for(var i = 0; i < 10; i++)
             {
                 switch(rnd.Next() % 3)
@@ -41,6 +42,7 @@ namespace Fourth_Lab
             ShowInfo();
         }
 
+        //Отображение текущей информации о списке
         private void ShowInfo()
         {
             listQueue.Items.Clear();
@@ -72,6 +74,7 @@ namespace Fourth_Lab
             txtInfo.Text += String.Format("{0}\t\t{1}\t\t{2}", filmsCount, serialsCount, tvshowsCount);
         }
 
+        //Получение первого объекта в списке
         private void btnGet_Click(object sender, EventArgs e)
         {
             if (this.movieList.Count == 0)

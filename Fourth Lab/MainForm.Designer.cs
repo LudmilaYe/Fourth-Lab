@@ -104,7 +104,10 @@
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnRefill);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автомат выдачи фильмов";
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             this.ResumeLayout(false);
