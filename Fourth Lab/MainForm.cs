@@ -43,6 +43,7 @@ namespace Fourth_Lab
 
         private void ShowInfo()
         {
+            listQueue.Items.Clear();
             int filmsCount = 0;
             int serialsCount = 0;
             int tvshowsCount = 0;
@@ -51,14 +52,17 @@ namespace Fourth_Lab
             {
                 if (movie is Film)
                 {
+                    listQueue.Items.Add("Фильм");
                     filmsCount++;
                 }
                 else if (movie is Serial)
                 {
+                    listQueue.Items.Add("Сериал");
                     serialsCount++;
                 }
                 else if (movie is TVShow)
                 {
+                    listQueue.Items.Add("TV передача");
                     tvshowsCount++;
                 }
             }
@@ -66,7 +70,6 @@ namespace Fourth_Lab
             txtInfo.Text = "Фильмы\tСериалы\tTV передачи";
             txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t{1}\t{2}", filmsCount, serialsCount, tvshowsCount);
-
         }
 
         private void btnGet_Click(object sender, EventArgs e)

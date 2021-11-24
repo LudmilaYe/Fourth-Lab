@@ -32,6 +32,7 @@
             this.txtInfo = new System.Windows.Forms.RichTextBox();
             this.txtOut = new System.Windows.Forms.RichTextBox();
             this.btnGet = new System.Windows.Forms.Button();
+            this.listQueue = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnRefill
@@ -72,11 +73,20 @@
             this.btnGet.UseVisualStyleBackColor = true;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
+            // listQueue
+            // 
+            this.listQueue.FormattingEnabled = true;
+            this.listQueue.Location = new System.Drawing.Point(239, 12);
+            this.listQueue.Name = "listQueue";
+            this.listQueue.Size = new System.Drawing.Size(120, 173);
+            this.listQueue.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 195);
+            this.ClientSize = new System.Drawing.Size(371, 195);
+            this.Controls.Add(this.listQueue);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtOut);
             this.Controls.Add(this.txtInfo);
@@ -93,6 +103,7 @@
         private System.Windows.Forms.RichTextBox txtInfo;
         private System.Windows.Forms.RichTextBox txtOut;
         private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.ListBox listQueue;
     }
 }
 
