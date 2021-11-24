@@ -14,7 +14,7 @@ namespace Fourth_Lab
     {
         List<Movie> movieList = new List<Movie>();
         public MainForm()
-        {
+        { 
             InitializeComponent();
             ShowInfo();
         }
@@ -67,9 +67,9 @@ namespace Fourth_Lab
                 }
             }
 
-            txtInfo.Text = "Фильмы\tСериалы\tTV передачи";
+            txtInfo.Text = "Фильмы\t\tСериалы\t\tTV передачи";
             txtInfo.Text += "\n";
-            txtInfo.Text += String.Format("{0}\t{1}\t{2}", filmsCount, serialsCount, tvshowsCount);
+            txtInfo.Text += String.Format("{0}\t\t{1}\t\t{2}", filmsCount, serialsCount, tvshowsCount);
         }
 
         private void btnGet_Click(object sender, EventArgs e)
@@ -77,6 +77,7 @@ namespace Fourth_Lab
             if (this.movieList.Count == 0)
             {
                 txtOut.Text = "Пусто :(";
+                icon.Image = Properties.Resources.none;
                 return;
             }
 
@@ -84,6 +85,7 @@ namespace Fourth_Lab
             this.movieList.RemoveAt(0);
 
             txtOut.Text = movie.GetInfo();
+            icon.Image = movie.GetIcon();
 
             ShowInfo();
         }

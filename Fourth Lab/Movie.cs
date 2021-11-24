@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Fourth_Lab
 {
@@ -22,6 +23,7 @@ namespace Fourth_Lab
             var str = String.Format("\nРейтинг: {0}", this.Rating);
             return str;
         }
+        public abstract Bitmap GetIcon();
     }
 
     public class Film : Movie
@@ -43,10 +45,14 @@ namespace Fourth_Lab
         {
             var str = "Фильм";
             str += base.GetInfo();
-            str += String.Format("\nДлина: {0} минут", this.Length);
+            str += String.Format("\nДлина: {0} мин.", this.Length);
             str += String.Format("\nПолучено наград: {0}", this.CountOfAwards);
             str += String.Format("\nТип: {0}", this.Type);
             return str;
+        }
+        public override Bitmap GetIcon()
+        {
+            return Properties.Resources.film;
         }
     }
 
@@ -71,6 +77,10 @@ namespace Fourth_Lab
             str += String.Format("\nКол-во сезонов: {0}", this.Seasons);
             return str;
         }
+        public override Bitmap GetIcon()
+        {
+            return Properties.Resources.serial;
+        }
     }
 
     public class TVShow : Movie
@@ -91,8 +101,12 @@ namespace Fourth_Lab
             var str = "TV передача";
             str += base.GetInfo();
             str += String.Format("\nДлительность: {0}", this.Duration);
-            str += String.Format("\nЭкранное время: {0} минут", this.Airtime);
+            str += String.Format("\nЭкранное время: {0} мин.", this.Airtime);
             return str;
+        }
+        public override Bitmap GetIcon()
+        {
+            return Properties.Resources.tvshow;
         }
     }
 }
